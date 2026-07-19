@@ -2,8 +2,11 @@ import csv
 import os
 from datetime import datetime
 
-# Create data folder if it doesn't already exist
-os.makedirs("data", exist_ok=True)
+# Create writable data folder next to executable/script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
+os.makedirs(DATA_DIR, exist_ok=True)
 
 # Stores the filename after the first call
 LOG_FILE = None
@@ -19,12 +22,14 @@ def log(name, day, player_type, news, sentiment, price,
     if LOG_FILE is None:
 
         # Removes characters Windows doesn't allow in filenames
-        safe_name = "".join(c for c in name if c.isalnum() or c in (" ", "_", "-")).strip()
+        safe_name = "".join(
+            c for c in name if c.isalnum() or c in (" ", "_", "-")
+        ).strip()
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
         LOG_FILE = os.path.join(
-            "data",
+            DATA_DIR,
             f"{safe_name}_{timestamp}.csv"
         )
 
