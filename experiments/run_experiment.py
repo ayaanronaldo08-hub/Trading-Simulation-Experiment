@@ -146,9 +146,15 @@ print(center("EXPERIMENT COMPLETE"))
 print("=" * final_width)
 
 print(center(f"Final Portfolio Value: ${post_trade_portfolio_value:.2f}"))
-print("\n" + center("Your trading data has been saved in:"))
-print(center("Trading Experiment/dist/data"))
+print("\n" + center("Your trading data has been saved!"))
+print(center("To find your CSV file:"))
+print(center("1. Open the folder where you extracted this ZIP file"))
+print(center("2. Open the folder named 'data'"))
+print(center("3. Find the newest CSV file with your name and timestamp"))
 print("\n" + center("Please email the most recent .csv file to:"))
 print(center("ayaanronaldo08@gmail.com"))
 print("\n" + center("Thank you for participating!"))
 print("=" * final_width)
+
+while True:
+    time.sleep(1)
