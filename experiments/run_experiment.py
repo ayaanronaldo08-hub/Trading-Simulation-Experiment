@@ -118,8 +118,6 @@ for i in range (1,101): #for loop runs 100 times
     log(name, i, "player", news, sentiment, price, action, amount_of_shares, human_cash, human_shares, post_trade_portfolio_value, "n/a") #logs the human data into logs.csv
     log(bot_name, i, "bot", news, sentiment, price, bot_action, bot_amount_of_shares, bot_cash, bot_shares, bot_post_trade_portfolio_value, bot_constraint_block) #logs the bot data into logs.csv
 
-    change = post_trade_portfolio_value - pre_trade_portfolio_value #checks how much portfolio has changed
-
     # ==========================
     # END OF DAY SUMMARY DISPLAY
     # ==========================
@@ -131,16 +129,6 @@ for i in range (1,101): #for loop runs 100 times
     print(center(f"Cash:            ${human_cash:.2f}"))
     print(center(f"Shares Owned:    {human_shares}"))
     print(center(f"Portfolio Value: ${post_trade_portfolio_value:.2f}"))
-
-    # ==========================
-    # DAILY PORTFOLIO CHANGE DISPLAY
-    # ==========================
-    if change > 0:
-        print(center(f"Today's Change:  +${change:.2f}"))
-    elif change < 0:
-        print(center(f"Today's Change:  -${abs(change):.2f}"))
-    else:
-        print(center("Today's Change:   $0.00"))
 
     print("-" * term_width)
 
