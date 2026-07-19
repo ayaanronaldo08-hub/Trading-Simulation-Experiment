@@ -27,7 +27,7 @@ jobs:
 
       - name: Build executable
         run: |
-          pyinstaller --onefile experiments/run_experiment.py --name TradingSimExperiment
+          pyinstaller --onefile --paths . experiments/run_experiment.py --name TradingSimExperiment
 
       - name: Upload executable
         uses: actions/upload-artifact@v4
