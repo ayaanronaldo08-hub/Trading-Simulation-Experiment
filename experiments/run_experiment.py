@@ -32,10 +32,11 @@ human_shares = 0 #initial amount of shares held for human
 
 bot_cash = 1000 #initial account balance for bot
 bot_shares = 0 #initial amount of shares held for bot
-    
+
+name = input("Enter initals: ")
 bot_name = "bot"
 
-start_log() #creates a new CSV file for this experiment run
+start_log(name) #creates a new CSV file for this experiment run
 
 price_history = [] #the list containing all prices from every day
 
@@ -114,7 +115,7 @@ for i in range (1,101): #for loop runs 100 times
     post_trade_portfolio_value = round((human_cash + (human_shares * price)), 2) #claculates portfolio value after trade and rounds to 2 decimal places
     bot_post_trade_portfolio_value = round((bot_cash + (bot_shares * price)), 2) #claculates portfolio value after trade and rounds to 2 decimal places
 
-    log("id", i, "player", news, sentiment, price, action, amount_of_shares, human_cash, human_shares, post_trade_portfolio_value, "n/a") #logs the human data into logs.csv
+    log(name, i, "player", news, sentiment, price, action, amount_of_shares, human_cash, human_shares, post_trade_portfolio_value, "n/a") #logs the human data into logs.csv
     log(bot_name, i, "bot", news, sentiment, price, bot_action, bot_amount_of_shares, bot_cash, bot_shares, bot_post_trade_portfolio_value, bot_constraint_block) #logs the bot data into logs.csv
 
     # ==========================
