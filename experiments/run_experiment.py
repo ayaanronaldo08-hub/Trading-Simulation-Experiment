@@ -35,7 +35,7 @@ bot_shares = 0 #initial amount of shares held for bot
     
 bot_name = "bot"
 
-start_log(name) #creates a new CSV file for this experiment run
+start_log() #creates a new CSV file for this experiment run
 
 price_history = [] #the list containing all prices from every day
 
